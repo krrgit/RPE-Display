@@ -7,6 +7,7 @@
 
 import UIKit
 import CoreBluetooth
+import Charts
 
 protocol OnHeartRateReceivedDelegate: AnyObject {
     func onHeartRateReceived(bpm: Int)
@@ -15,12 +16,11 @@ protocol OnHeartRateReceivedDelegate: AnyObject {
 class MainViewController: UIViewController, OnHeartRateReceivedDelegate {
     
     @IBOutlet weak var BPMLabel: UILabel!
-    @IBOutlet weak var RIRLabel: UILabel!
+    @IBOutlet weak var RPELabel: UILabel!
     
     @IBOutlet weak var maxField: UITextField!
     @IBOutlet weak var restField: UITextField!
     @IBOutlet weak var KBToolbar: UIToolbar!
-    
     
     
     static let MainView = MainViewController.self
@@ -63,8 +63,9 @@ class MainViewController: UIViewController, OnHeartRateReceivedDelegate {
     
     func onHeartRateReceived(bpm: Int) {
         self.bpm = bpm
-        calculateRIR()
-        RIRLabel.text = String(repsInReserve)
+//        calculateRIR()
+        calculateRPE()
+        RPELabel.text = String(ratedPercievedExertion)
         BPMLabel.text = String(bpm)
         print("🍏", bpm, "BPM | RIR", repsInReserve)
         
@@ -75,5 +76,9 @@ class MainViewController: UIViewController, OnHeartRateReceivedDelegate {
         let rawPercent = Float((bpm - restBPM) / denom)
         ratedPercievedExertion = 10 * rawPercent
         repsInReserve = 10 - Int(floor(rawPercent))
+    }
+    
+    private func calculateRPE() {
+        ratedPercievedExertion = -0.998 + (0.0935 * Float(bpm))
     }
 }
