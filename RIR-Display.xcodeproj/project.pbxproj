@@ -17,6 +17,7 @@
 		0A8E427D2B158D000068F051 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A8E427B2B158D000068F051 /* LaunchScreen.storyboard */; };
 		0A8E42892B15C93D0068F051 /* BluetoothViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A8E42882B15C93D0068F051 /* BluetoothViewController.swift */; };
 		0A8E428B2B15CA5F0068F051 /* PeripheralCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A8E428A2B15CA5F0068F051 /* PeripheralCell.swift */; };
+		7A6F586459CD7D54C513280F /* Pods_RIR_Display.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C3C974EB06A25AD2F59B05D /* Pods_RIR_Display.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,9 @@
 		0A8E427E2B158D000068F051 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0A8E42882B15C93D0068F051 /* BluetoothViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BluetoothViewController.swift; sourceTree = "<group>"; };
 		0A8E428A2B15CA5F0068F051 /* PeripheralCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeripheralCell.swift; sourceTree = "<group>"; };
+		4C130B88B6F3F5D19D5C7A54 /* Pods-RIR-Display.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RIR-Display.debug.xcconfig"; path = "Target Support Files/Pods-RIR-Display/Pods-RIR-Display.debug.xcconfig"; sourceTree = "<group>"; };
+		5C3C974EB06A25AD2F59B05D /* Pods_RIR_Display.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RIR_Display.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		80E68DEE79467159372B0A7C /* Pods-RIR-Display.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RIR-Display.release.xcconfig"; path = "Target Support Files/Pods-RIR-Display/Pods-RIR-Display.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -39,6 +43,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7A6F586459CD7D54C513280F /* Pods_RIR_Display.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -50,6 +55,8 @@
 			children = (
 				0A8E426F2B158CFE0068F051 /* RIR-Display */,
 				0A8E426E2B158CFE0068F051 /* Products */,
+				82A8FB2884BEFF1CCCAEE582 /* Pods */,
+				58F205B817F192B4034EC292 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -79,6 +86,23 @@
 			path = "RIR-Display";
 			sourceTree = "<group>";
 		};
+		58F205B817F192B4034EC292 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5C3C974EB06A25AD2F59B05D /* Pods_RIR_Display.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		82A8FB2884BEFF1CCCAEE582 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				4C130B88B6F3F5D19D5C7A54 /* Pods-RIR-Display.debug.xcconfig */,
+				80E68DEE79467159372B0A7C /* Pods-RIR-Display.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -86,9 +110,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0A8E42812B158D000068F051 /* Build configuration list for PBXNativeTarget "RIR-Display" */;
 			buildPhases = (
+				4B4AED89922F62C019915801 /* [CP] Check Pods Manifest.lock */,
 				0A8E42692B158CFE0068F051 /* Sources */,
 				0A8E426A2B158CFE0068F051 /* Frameworks */,
 				0A8E426B2B158CFE0068F051 /* Resources */,
+				890F132C0A5590E61A38734D /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -144,6 +170,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		4B4AED89922F62C019915801 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-RIR-Display-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		890F132C0A5590E61A38734D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-RIR-Display/Pods-RIR-Display-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-RIR-Display/Pods-RIR-Display-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-RIR-Display/Pods-RIR-Display-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		0A8E42692B158CFE0068F051 /* Sources */ = {
@@ -300,12 +368,14 @@
 		};
 		0A8E42822B158D000068F051 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4C130B88B6F3F5D19D5C7A54 /* Pods-RIR-Display.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 2Y7FZBLBZ9;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "RIR-Display/Info.plist";
 				INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = "Allow for bluetooth use";
@@ -330,12 +400,14 @@
 		};
 		0A8E42832B158D000068F051 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 80E68DEE79467159372B0A7C /* Pods-RIR-Display.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 2Y7FZBLBZ9;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "RIR-Display/Info.plist";
 				INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = "Allow for bluetooth use";

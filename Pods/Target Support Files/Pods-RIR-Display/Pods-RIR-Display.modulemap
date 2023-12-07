@@ -1,0 +1,6 @@
+framework module Pods_RIR_Display {
+  umbrella header "Pods-RIR-Display-umbrella.h"
+
+  export *
+  module * { export * }
+}
