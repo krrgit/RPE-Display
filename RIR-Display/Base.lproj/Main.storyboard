@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22155" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="U1t-fn-FoX">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22155" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="SsA-Zz-m3f">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -30,10 +30,10 @@
                                 </items>
                             </toolbar>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TNv-fS-97D">
-                                <rect key="frame" x="0.0" y="155" width="393" height="418"/>
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="573"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OSc-FJ-DWC" userLabel="DataView">
-                                        <rect key="frame" x="20" y="18" width="353" height="210"/>
+                                        <rect key="frame" x="20" y="163" width="353" height="210"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5A2-Vf-nxz" userLabel="LeftView">
                                                 <rect key="frame" x="0.0" y="0.0" width="270" height="200"/>
@@ -197,21 +197,38 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="m0y-J9-SEO" userLabel="GraphView">
-                                        <rect key="frame" x="0.0" y="236" width="393" height="125"/>
+                                        <rect key="frame" x="0.0" y="381" width="393" height="125"/>
                                         <color key="backgroundColor" systemColor="secondarySystemFillColor"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="125" id="nEF-9M-a73"/>
                                         </constraints>
                                     </view>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="LEh-Nn-fIW">
+                                        <rect key="frame" x="15" y="524" width="370" height="32"/>
+                                        <segments>
+                                            <segment title="Borg-RPE(6-20)"/>
+                                            <segment title="Borg-CR10(0-10)"/>
+                                            <segment title="Custom"/>
+                                        </segments>
+                                        <connections>
+                                            <action selector="didTapScaleControl:" destination="BYZ-38-t0r" eventType="valueChanged" id="ewj-b3-scV"/>
+                                        </connections>
+                                    </segmentedControl>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstItem="OSc-FJ-DWC" firstAttribute="top" secondItem="TNv-fS-97D" secondAttribute="topMargin" constant="10" id="0pG-Zs-e0t"/>
+                                    <constraint firstItem="OSc-FJ-DWC" firstAttribute="top" secondItem="TNv-fS-97D" secondAttribute="topMargin" id="0pG-Zs-e0t"/>
                                     <constraint firstItem="m0y-J9-SEO" firstAttribute="leading" secondItem="TNv-fS-97D" secondAttribute="leading" id="3JK-xq-blG"/>
                                     <constraint firstAttribute="trailing" secondItem="OSc-FJ-DWC" secondAttribute="trailing" constant="20" symbolic="YES" id="46h-Wv-7G6"/>
                                     <constraint firstItem="m0y-J9-SEO" firstAttribute="top" secondItem="OSc-FJ-DWC" secondAttribute="bottom" constant="8" id="GMV-yL-NIf"/>
+                                    <constraint firstAttribute="trailing" secondItem="LEh-Nn-fIW" secondAttribute="trailing" constant="8" id="Nq1-32-feB"/>
+                                    <constraint firstItem="LEh-Nn-fIW" firstAttribute="leading" secondItem="TNv-fS-97D" secondAttribute="leading" constant="15" id="Oas-ST-QE8"/>
+                                    <constraint firstItem="LEh-Nn-fIW" firstAttribute="top" secondItem="m0y-J9-SEO" secondAttribute="bottom" constant="18" id="WRt-gz-hdg"/>
+                                    <constraint firstItem="LEh-Nn-fIW" firstAttribute="bottom" secondItem="TNv-fS-97D" secondAttribute="bottomMargin" constant="-10" id="Y3h-TY-bpQ"/>
+                                    <constraint firstItem="LEh-Nn-fIW" firstAttribute="trailing" secondItem="TNv-fS-97D" secondAttribute="trailingMargin" id="afv-aY-1TS"/>
                                     <constraint firstAttribute="trailing" secondItem="m0y-J9-SEO" secondAttribute="trailing" id="bHX-DK-ppk"/>
-                                    <constraint firstAttribute="height" constant="418" id="uo7-Yl-vFA"/>
+                                    <constraint firstItem="LEh-Nn-fIW" firstAttribute="leading" secondItem="TNv-fS-97D" secondAttribute="leading" constant="15" id="np0-V2-u1P"/>
+                                    <constraint firstAttribute="height" constant="573" id="uo7-Yl-vFA"/>
                                     <constraint firstItem="OSc-FJ-DWC" firstAttribute="leading" secondItem="TNv-fS-97D" secondAttribute="leading" constant="20" symbolic="YES" id="xRy-RI-k49"/>
                                 </constraints>
                             </view>
@@ -219,9 +236,9 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="TNv-fS-97D" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Gqq-PZ-bZh"/>
+                            <constraint firstItem="TNv-fS-97D" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="-155" id="Gqq-PZ-bZh"/>
                             <constraint firstAttribute="trailing" secondItem="TNv-fS-97D" secondAttribute="trailing" id="HYm-Rg-gS0"/>
-                            <constraint firstItem="TNv-fS-97D" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="JI7-hV-tFF"/>
+                            <constraint firstItem="TNv-fS-97D" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="-155" id="JI7-hV-tFF"/>
                             <constraint firstItem="TNv-fS-97D" firstAttribute="trailing" secondItem="8Uf-Wt-5Yt" secondAttribute="trailing" id="LCJ-MK-Afj"/>
                             <constraint firstItem="TNv-fS-97D" firstAttribute="leading" secondItem="8Uf-Wt-5Yt" secondAttribute="leading" id="O7x-FL-jJi"/>
                             <constraint firstItem="TNv-fS-97D" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Xuk-tl-87d"/>
@@ -239,16 +256,17 @@
                     <connections>
                         <outlet property="BPMLabel" destination="26L-GQ-d69" id="Vsx-ft-FBY"/>
                         <outlet property="KBToolbar" destination="8Uf-Wt-5Yt" id="4nO-x5-fIg"/>
-                        <outlet property="MaxField" destination="sy5-2M-YQv" id="8Ff-WW-QPb"/>
                         <outlet property="RPEDecLabel" destination="UmG-SK-lmW" id="gWV-ij-CjG"/>
                         <outlet property="RPELabel" destination="hYh-PD-oon" id="jPz-DN-N2B"/>
                         <outlet property="graphView" destination="m0y-J9-SEO" id="qQ7-Bu-HpS"/>
+                        <outlet property="maxField" destination="sy5-2M-YQv" id="iPd-5O-lRK"/>
                         <outlet property="restField" destination="vPh-o6-C2r" id="Sox-6B-q8v"/>
+                        <outlet property="scaleSegmentedControl" destination="LEh-Nn-fIW" id="WpU-9f-Pg0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="797.70992366412213" y="3.5211267605633805"/>
+            <point key="canvasLocation" x="1724.4274809160304" y="3.5211267605633805"/>
         </scene>
         <!--Bluetooth View Controller-->
         <scene sceneID="SU6-Ce-CeR">
@@ -259,7 +277,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="40" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="d1F-xG-hGB">
-                                <rect key="frame" x="16" y="155" width="361" height="663"/>
+                                <rect key="frame" x="16" y="155" width="361" height="614"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="PeripheralCell" rowHeight="40" id="XnY-AZ-Xx7" customClass="PeripheralCell" customModule="RIR_Display" customModuleProvider="target">
@@ -301,12 +319,13 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="amK-bu-cFC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1696.9465648854962" y="21.83098591549296"/>
+            <point key="canvasLocation" x="2623.6641221374043" y="21.83098591549296"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Stats-->
         <scene sceneID="sTg-Ai-N6F">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="U1t-fn-FoX" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Stats" image="chart.bar.xaxis" catalog="system" id="fQG-ep-22J"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="wzx-8F-bCv">
                         <rect key="frame" x="0.0" y="59" width="393" height="96"/>
@@ -319,21 +338,40 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yil-XG-4jd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="797.70992366412213" y="3.5211267605633805"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="IzR-fs-I2u">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="SsA-Zz-m3f" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="WFL-ps-5y9">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="U1t-fn-FoX" kind="relationship" relationship="viewControllers" id="lhc-72-waZ"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4l5-Mg-BgM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
             <point key="canvasLocation" x="-129.00763358778624" y="3.5211267605633805"/>
         </scene>
     </scenes>
     <resources>
+        <image name="chart.bar.xaxis" catalog="system" width="128" height="97"/>
         <systemColor name="secondarySystemFillColor">
-            <color red="0.47058823529411764" green="0.47058823529411764" blue="0.50196078431372548" alpha="0.16" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.47058823529999999" green="0.47058823529999999" blue="0.50196078430000002" alpha="0.16" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemGreenColor">
-            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemRedColor">
-            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemYellowColor">
             <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
