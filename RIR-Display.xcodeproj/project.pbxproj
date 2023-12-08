@@ -17,7 +17,6 @@
 		0A8E427D2B158D000068F051 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A8E427B2B158D000068F051 /* LaunchScreen.storyboard */; };
 		0A8E42892B15C93D0068F051 /* BluetoothViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A8E42882B15C93D0068F051 /* BluetoothViewController.swift */; };
 		0A8E428B2B15CA5F0068F051 /* PeripheralCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A8E428A2B15CA5F0068F051 /* PeripheralCell.swift */; };
-		0A9938BA2B227997008A4984 /* CustomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9938B92B227997008A4984 /* CustomViewController.swift */; };
 		7A6F586459CD7D54C513280F /* Pods_RIR_Display.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C3C974EB06A25AD2F59B05D /* Pods_RIR_Display.framework */; };
 /* End PBXBuildFile section */
 
@@ -34,7 +33,6 @@
 		0A8E427E2B158D000068F051 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0A8E42882B15C93D0068F051 /* BluetoothViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BluetoothViewController.swift; sourceTree = "<group>"; };
 		0A8E428A2B15CA5F0068F051 /* PeripheralCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeripheralCell.swift; sourceTree = "<group>"; };
-		0A9938B92B227997008A4984 /* CustomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomViewController.swift; sourceTree = "<group>"; };
 		4C130B88B6F3F5D19D5C7A54 /* Pods-RIR-Display.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RIR-Display.debug.xcconfig"; path = "Target Support Files/Pods-RIR-Display/Pods-RIR-Display.debug.xcconfig"; sourceTree = "<group>"; };
 		5C3C974EB06A25AD2F59B05D /* Pods_RIR_Display.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RIR_Display.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		80E68DEE79467159372B0A7C /* Pods-RIR-Display.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RIR-Display.release.xcconfig"; path = "Target Support Files/Pods-RIR-Display/Pods-RIR-Display.release.xcconfig"; sourceTree = "<group>"; };
@@ -74,7 +72,6 @@
 			isa = PBXGroup;
 			children = (
 				0A8E42702B158CFE0068F051 /* AppDelegate.swift */,
-				0A9938B92B227997008A4984 /* CustomViewController.swift */,
 				0A8E42882B15C93D0068F051 /* BluetoothViewController.swift */,
 				0A8E428A2B15CA5F0068F051 /* PeripheralCell.swift */,
 				0A8E42722B158CFE0068F051 /* SceneDelegate.swift */,
@@ -228,7 +225,6 @@
 				0A3485A92B15EE59004A1428 /* MainViewController.swift in Sources */,
 				0A8E428B2B15CA5F0068F051 /* PeripheralCell.swift in Sources */,
 				0A8E42732B158CFE0068F051 /* SceneDelegate.swift in Sources */,
-				0A9938BA2B227997008A4984 /* CustomViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

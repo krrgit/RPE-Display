@@ -9,17 +9,19 @@ import UIKit
 import CoreBluetooth
 import Charts
 
-enum RPEScale {
-    case BorgRPE
-    case BorgCR10
-    case Custom
-}
-
 protocol OnHeartRateReceivedDelegate: AnyObject {
     func onHeartRateReceived(bpm: Int)
 }
 
+enum DataMode {
+    case stats
+    case workout
+}
+
 class MainViewController: UIViewController, OnHeartRateReceivedDelegate {
+    
+    static let MainView = MainViewController.self
+    static weak var onHeartRateReceivedDelegate: OnHeartRateReceivedDelegate?
     
     @IBOutlet weak var BPMLabel: UILabel!
     @IBOutlet weak var RPELabel: UILabel!
@@ -30,33 +32,28 @@ class MainViewController: UIViewController, OnHeartRateReceivedDelegate {
     @IBOutlet weak var KBToolbar: UIToolbar!
     
     @IBOutlet weak var graphView: UIView!
+    @IBOutlet weak var modeSegmentedControl: UISegmentedControl!
     
-    @IBOutlet weak var scaleSegmentedControl: UISegmentedControl!
-
-    @IBOutlet weak var scrollView: UIScrollView!
-    
-
-    @IBOutlet weak var dataView: UIView!
     var barChart = BarChartView()
-    
-    static let MainView = MainViewController.self
-    
-    static weak var onHeartRateReceivedDelegate: OnHeartRateReceivedDelegate?
-    
-    var scale: RPEScale = RPEScale.BorgRPE
+
     
     var bpm: Int = 0
     var restBPM: Int = 60
     var maxBPM: Int = 140
-    var customMaxBPM: Int = 200
     
-    var ratedPercievedExertion: Float = 0
+    var customMaxBPM: Int = 200
+    var ratedPercievedExertion: Float = 1
+    var maxRPE: Float = 1
     
     var hrData: [Int] = []
     var hrMaxLen: Int = 60
     var curGraphIndex: Int = 60
     
+    var mode: DataMode = DataMode.stats
+    
     var graphEntries: [BarChartDataEntry] = [BarChartDataEntry]()
+    
+    var workoutScreenTime: Int = 0
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -125,25 +122,40 @@ class MainViewController: UIViewController, OnHeartRateReceivedDelegate {
         self.bpm = bpm
         calculateRPE()
         
+        // Update Min Max BPMs
         (restBPM, maxBPM) = hrData.minAndMax() ?? (restBPM, maxBPM)
         
-        UpdateRPELabels()
-        // Update Labels
-        BPMLabel.text = String(bpm)
-        if (scale != RPEScale.Custom)  {
+        
+        // Reset Max RPE if on workout screen for 5s
+        // and count
+        if (mode == DataMode.workout) {
+            UpdateRPELabels(RPE: ratedPercievedExertion)
+            
+            workoutScreenTime += 1
+            
+            if (workoutScreenTime > 5){
+                maxRPE = max(maxRPE, ratedPercievedExertion)
+            } else  if (workoutScreenTime == 5) {
+                maxRPE = ratedPercievedExertion
+            }
+        } else {
+            maxRPE = max(maxRPE, ratedPercievedExertion)
+            UpdateRPELabels(RPE: maxRPE)
             maxField.text = String(maxBPM)
         }
         
+        // Update Labels
+        BPMLabel.text = String(bpm)
         restField.text = String(restBPM)
         
         print("🍏", bpm, "BPM | RPE", ratedPercievedExertion)
         AddHRtoData(bpm: bpm)
     }
     
-    private func UpdateRPELabels() {
+    private func UpdateRPELabels(RPE: Float) {
         // Separate whole value from decimal
-        let wholeValue = Int(floor(ratedPercievedExertion))
-        let decValue: Float = floor((ratedPercievedExertion - Float(wholeValue)) * 100) / Float(100)
+        let wholeValue = Int(floor(RPE))
+        let decValue: Float = floor((RPE - Float(wholeValue)) * 100) / Float(100)
         let decString = String(format: "%.2f", decValue).replacingOccurrences(of: "^\\d*\\.", with: ".", options: .regularExpression)
         
         
@@ -153,44 +165,32 @@ class MainViewController: UIViewController, OnHeartRateReceivedDelegate {
     }
     
     
-    @IBAction func didTapScaleControl(_ sender: UISegmentedControl) {
+    // Switch Workout Modes
+    @IBAction func didTapModeControl(_ sender: UISegmentedControl) {
+        calculateRPE()
         switch(sender.selectedSegmentIndex) {
         case 0:
-            scale = RPEScale.BorgRPE
+            mode = DataMode.stats
             maxField.text = String(maxBPM)
+            UpdateRPELabels(RPE: maxRPE)
         case 1:
-            scale = RPEScale.BorgCR10
-            maxField.text = String(maxBPM)
-        case 2:
-            scale = RPEScale.Custom
+            mode = DataMode.workout
             maxField.text = String(customMaxBPM)
+            workoutScreenTime = 0
+            UpdateRPELabels(RPE: ratedPercievedExertion)
         default:
             break
         }
         
-        calculateRPE()
-        UpdateRPELabels()
+        
     }
     
     private func calculateRPE() {
-        // based on selected scale, calculate RPE
-        switch(scale) {
-            case RPEScale.BorgRPE:
-                ratedPercievedExertion = -0.998 + (0.0935 * Float(bpm))
-                break;
-            case RPEScale.BorgCR10:
-                let x = -0.998 + (0.0935 * Float(bpm))
-                ratedPercievedExertion = 0.0335*x*x - 0.142*x + 0.3372
-                break;
-            case RPEScale.Custom:
-                ratedPercievedExertion = 1 + Float(10.0 / Float(customMaxBPM - 60)) * Float(bpm - 60)
-                break
-        }
+        ratedPercievedExertion = 1 + Float(10.0 / Float(customMaxBPM - 60)) * Float(bpm - 60)
         
         // Clamp RPE between 0 and 20
         ratedPercievedExertion = ratedPercievedExertion.clamped(to: 0.0...20.0)
     }
-    
     
     
     private func AddHRtoData(bpm: Int) {
