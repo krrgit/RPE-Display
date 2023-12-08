@@ -11,18 +11,12 @@ import CoreBluetooth
 
 
 class BluetoothViewController: ViewController, OnDidDiscoverPeripheralDelegate {
-//    var centralManager: CBCentralManager?
-//    private var peripherals: [CBPeripheral] = []
-//    @Published var peripheralNames: [String] = []
-    
-//    var heartRatePeripheral: CBPeripheral!
     
     
     @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        self.centralManager = CBCentralManager(delegate: self, queue: .main)
         
         tableView.dataSource = self
         tableView.delegate = self

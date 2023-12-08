@@ -133,9 +133,9 @@ class MainViewController: UIViewController, OnHeartRateReceivedDelegate {
             
             workoutScreenTime += 1
             
-            if (workoutScreenTime > 5){
+            if (workoutScreenTime > 3){
                 maxRPE = max(maxRPE, ratedPercievedExertion)
-            } else  if (workoutScreenTime == 5) {
+            } else  if (workoutScreenTime == 3) {
                 maxRPE = ratedPercievedExertion
             }
         } else {

@@ -41,7 +41,7 @@
                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cKw-vT-47n" userLabel="RPELabels">
                                                                         <rect key="frame" x="0.0" y="20" width="262" height="180"/>
                                                                         <subviews>
-                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="right" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" text="0" textAlignment="right" lineBreakMode="clip" baselineAdjustment="alignBaselines" sizingRule="oversize" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="228" translatesAutoresizingMaskIntoConstraints="NO" id="AbG-m5-oK8" userLabel="RPELabel">
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="right" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" text="1" textAlignment="right" lineBreakMode="clip" baselineAdjustment="alignBaselines" sizingRule="oversize" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="228" translatesAutoresizingMaskIntoConstraints="NO" id="AbG-m5-oK8" userLabel="RPELabel">
                                                                                 <rect key="frame" x="0.0" y="-29.333333333333329" width="228" height="239"/>
                                                                                 <constraints>
                                                                                     <constraint firstAttribute="width" constant="228" id="PqA-WQ-GsR"/>
@@ -272,10 +272,10 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Connect"/>
+                                <connections>
+                                    <segue destination="nJc-gO-1cs" kind="show" id="2CJ-Kb-aW7"/>
+                                </connections>
                             </button>
-                            <connections>
-                                <segue destination="nJc-gO-1cs" kind="show" id="VlP-Zz-JqX"/>
-                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
