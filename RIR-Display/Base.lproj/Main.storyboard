@@ -39,7 +39,7 @@
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cKw-vT-47n" userLabel="RPELabels">
-                                                                        <rect key="frame" x="0.0" y="20" width="262" height="180"/>
+                                                                        <rect key="frame" x="0.0" y="20" width="260" height="180"/>
                                                                         <subviews>
                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="right" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" text="1" textAlignment="right" lineBreakMode="clip" baselineAdjustment="alignBaselines" sizingRule="oversize" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="228" translatesAutoresizingMaskIntoConstraints="NO" id="AbG-m5-oK8" userLabel="RPELabel">
                                                                                 <rect key="frame" x="0.0" y="-29.333333333333329" width="228" height="239"/>
@@ -52,7 +52,7 @@
                                                                                 <lineBreakStrategy key="lineBreakStrategy" pushOut="YES"/>
                                                                             </label>
                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=".00" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iDb-B5-o1b" userLabel="RPEDecLabel">
-                                                                                <rect key="frame" x="225" y="136" width="36.666666666666664" height="36"/>
+                                                                                <rect key="frame" x="223" y="136" width="36.666666666666686" height="36"/>
                                                                                 <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="25"/>
                                                                                 <nil key="textColor"/>
                                                                                 <nil key="highlightedColor"/>
@@ -60,7 +60,7 @@
                                                                         </subviews>
                                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                                         <constraints>
-                                                                            <constraint firstItem="iDb-B5-o1b" firstAttribute="leading" secondItem="AbG-m5-oK8" secondAttribute="trailing" constant="-3" id="1BI-hq-06Z"/>
+                                                                            <constraint firstItem="iDb-B5-o1b" firstAttribute="leading" secondItem="AbG-m5-oK8" secondAttribute="trailing" constant="-5" id="1BI-hq-06Z"/>
                                                                             <constraint firstAttribute="bottom" secondItem="iDb-B5-o1b" secondAttribute="bottom" constant="8" id="B2m-ih-z84"/>
                                                                             <constraint firstItem="iDb-B5-o1b" firstAttribute="top" secondItem="cKw-vT-47n" secondAttribute="top" constant="136" id="EyR-Hb-hgb"/>
                                                                             <constraint firstItem="AbG-m5-oK8" firstAttribute="leading" secondItem="cKw-vT-47n" secondAttribute="leading" id="S0l-px-pCj"/>
@@ -92,13 +92,12 @@
                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BPM" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nE6-5E-OYa" userLabel="BPMText">
                                                                                 <rect key="frame" x="0.0" y="0.0" width="81" height="20"/>
                                                                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
-                                                                                <color key="textColor" systemColor="systemRedColor"/>
                                                                                 <nil key="highlightedColor"/>
                                                                             </label>
                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="000" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xTj-8d-bif">
                                                                                 <rect key="frame" x="0.0" y="14" width="81" height="48"/>
                                                                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="40"/>
-                                                                                <nil key="textColor"/>
+                                                                                <color key="textColor" systemColor="systemRedColor"/>
                                                                                 <nil key="highlightedColor"/>
                                                                             </label>
                                                                         </subviews>
@@ -120,11 +119,11 @@
                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Max" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dy5-mK-GLN" userLabel="MaxText">
                                                                                 <rect key="frame" x="0.0" y="0.0" width="81" height="20"/>
                                                                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
-                                                                                <color key="textColor" systemColor="systemYellowColor"/>
                                                                                 <nil key="highlightedColor"/>
                                                                             </label>
-                                                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="140" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LM4-aQ-JM9" userLabel="MaxField">
+                                                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="140" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LM4-aQ-JM9" userLabel="MaxField">
                                                                                 <rect key="frame" x="0.0" y="18" width="81" height="37"/>
+                                                                                <color key="textColor" systemColor="systemYellowColor"/>
                                                                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="40"/>
                                                                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                                                                 <connections>
@@ -150,11 +149,11 @@
                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Min" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q59-WE-0ED" userLabel="RestText">
                                                                                 <rect key="frame" x="0.0" y="0.0" width="81" height="20"/>
                                                                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
-                                                                                <color key="textColor" systemColor="systemGreenColor"/>
                                                                                 <nil key="highlightedColor"/>
                                                                             </label>
-                                                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="60" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hvk-EU-GJl" userLabel="RestField">
+                                                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="60" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hvk-EU-GJl" userLabel="RestField">
                                                                                 <rect key="frame" x="0.0" y="18" width="81" height="37"/>
+                                                                                <color key="textColor" systemColor="systemGreenColor"/>
                                                                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="40"/>
                                                                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                                                                 <connections>
@@ -192,7 +191,7 @@
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Y4u-lY-Ijs" userLabel="GraphView">
                                                         <rect key="frame" x="0.0" y="226" width="393" height="125"/>
-                                                        <color key="backgroundColor" systemColor="secondarySystemFillColor"/>
+                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="125" id="4ra-YQ-LfC"/>
                                                         </constraints>
@@ -368,9 +367,6 @@
         </scene>
     </scenes>
     <resources>
-        <systemColor name="secondarySystemFillColor">
-            <color red="0.47058823529999999" green="0.47058823529999999" blue="0.50196078430000002" alpha="0.16" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

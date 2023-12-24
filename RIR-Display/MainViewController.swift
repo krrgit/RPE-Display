@@ -60,6 +60,8 @@ class MainViewController: UIViewController, OnHeartRateReceivedDelegate {
         // Do any additional setup after loading the view.
         MainViewController.onHeartRateReceivedDelegate = self
         
+        SetFonts()
+        
         maxField.inputAccessoryView = KBToolbar
         restField.inputAccessoryView = KBToolbar
         
@@ -68,6 +70,26 @@ class MainViewController: UIViewController, OnHeartRateReceivedDelegate {
             hrData.append(60)
             graphEntries.append(BarChartDataEntry(x:Double(x),y:Double(60)))
         }
+    }
+    
+    func SetFonts() {
+        BPMLabel.font = RoundFont(font: BPMLabel.font)
+        RPELabel.font = RoundFont(font: RPELabel.font)
+        RPEDecLabel.font = RoundFont(font: RPEDecLabel.font)
+        maxField.font = RoundFont(font: maxField.font! )
+        restField.font = RoundFont(font: restField.font!)
+    }
+    
+    func RoundFont(font: UIFont) -> UIFont {
+        return UIFont(
+            descriptor:
+                font.fontDescriptor
+                .withDesign(.rounded)? /// make rounded
+                .withSymbolicTraits(.traitBold) /// make bold
+                ??
+                font.fontDescriptor, /// return the normal title if customization failed
+            size: font.pointSize
+        );
     }
     
     
@@ -90,6 +112,8 @@ class MainViewController: UIViewController, OnHeartRateReceivedDelegate {
         barChart.leftAxis.axisMinimum = 60
         barChart.rightAxis.axisMaximum = 180
         barChart.rightAxis.axisMinimum = 60
+        barChart.rightAxis.labelFont = RoundFont(font: UIFont.systemFont(ofSize: 12))
+        barChart.rightAxis.axisLineColor = .clear
         barChart.leftAxis.enabled = false
         barChart.highlightPerTapEnabled = false
         barChart.highlightPerDragEnabled = false
