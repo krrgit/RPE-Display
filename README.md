@@ -3,8 +3,8 @@
 - Lines of Code: ~531 lines
 
 # Demo
-[Video Explanation](https://youtu.be/fmFU6MFUhHM)
-![](https://github.com/krrgit/RPE-Display/blob/main/rpedemo.gif)
+- [Video Explanation](https://youtu.be/fmFU6MFUhHM)
+- ![](https://github.com/krrgit/RPE-Display/blob/main/rpedemo.gif)
 
 # Source Code Structure
 - MainViewController - this view is the home screen of the app. It displays a heart rate(HR) graph, the HR, the min heartrate within 1 min, and the max.
