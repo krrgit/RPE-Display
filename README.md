@@ -3,6 +3,7 @@
 - Lines of Code: ~531 lines
 
 # Demo
+[Video Explanation](https://youtu.be/fmFU6MFUhHM)
 ![](https://github.com/krrgit/RPE-Display/blob/main/rpedemo.gif)
 
 # Source Code Structure
