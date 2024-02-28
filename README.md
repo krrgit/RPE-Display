@@ -2,6 +2,9 @@
 - RPE display is an iOS app that uses Bluetooth Heart Rate Monitors to display the RPE of a performed lift.
 - Lines of Code: ~531 lines
 
+# Video Demo
+![](https://github.com/krrgit/RPE-Display/edit/main/rpedemo.gif)
+
 # Source Code Structure
 - MainViewController - this view is the home screen of the app. It displays a heart rate(HR) graph, the HR, the min heartrate within 1 min, and the max.
 - BluetoothViewController - This view allows the user to connect to a bluetooth heart rate monitor. It displays all the heart rate devices detected via bluetooth.
